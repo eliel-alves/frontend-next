@@ -5,7 +5,7 @@ function CSR() {
     const [lista, setLista] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3002/predios`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/predios`)
             .then(response => response.json())
             .then(data => setLista(data))
             .catch(err => console.log('Erro: ' + err))
